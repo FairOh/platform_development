@@ -1179,7 +1179,9 @@ public class Monkey {
             } else {
                 if (!mCountEvents) {
                     cycleCounter++;
-                    writeScriptLog(cycleCounter);
+                    if (mScriptLog) {
+                        writeScriptLog(cycleCounter);
+                    }
                     //Capture the bugreport after n iteration
                     if (mGetPeriodicBugreport) {
                         if ((cycleCounter % mBugreportFrequency) == 0) {
